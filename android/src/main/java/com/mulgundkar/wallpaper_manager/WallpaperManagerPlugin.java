@@ -85,12 +85,14 @@ public class WallpaperManagerPlugin implements FlutterPlugin, MethodCallHandler 
         Bitmap bitmap = BitmapFactory.decodeFile(filePath);
         WallpaperManager wm = WallpaperManager.getInstance(context);
         try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                result = wm.setBitmap(bitmap, null, false, wallpaperLocation);
-            } else {
-                wm.setBitmap(bitmap);
-                result = 1;
-            }
+//             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                 result = wm.setBitmap(bitmap, null, false, wallpaperLocation);
+//             } else {
+//                 wm.setBitmap(bitmap);
+//                 result = 1;
+//             }
+            wm.setBitmap(bitmap);
+            result = 1;
         } catch (IOException e) {
             e.printStackTrace();
         }
